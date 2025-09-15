@@ -19,7 +19,7 @@ function Button({
       className={`px-4 py-2 ${getButtonStyling(styleType)} text-white`} 
       // px-4 py-2 = padding; getButtonStyling(styleType) = style based on type; text-white = white text color
     >
-      {text} // Render the button text
+      {text} 
     </button>
   );
 }

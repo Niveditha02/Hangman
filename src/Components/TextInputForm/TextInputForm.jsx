@@ -4,7 +4,7 @@ import TextInput from './TextInput.jsx';               // Presentation layer com
 import Button from './TextInputButtonStyling';         // Presentation layer component
 import TextInputFormContainer from './TextInputFormContainer.jsx';//logical layer component
 
-function TextInputForm() {
+function TextInputForm({ inputType,value,handleTextInputChange,handleFormSubmit,handleshowhideclick}) {
 
       // --- (UI Event Handling — still considered presentation-level logic) ---
       // Prevents the default HTML form submission (page reload) below is logical layer code moved to TextInputFormContainer.jsx
@@ -24,9 +24,13 @@ function TextInputForm() {
                   {/* Presentation Layer: Renders label + input */}
                   <div>
                         <TextInput
+                              type={inputType} // Input type (text, password, email, etc.)
                               label="Enter a word or phrase"
                               placeholder="Enter a word or phrase here ..."
-                              onChangeHandler={handleTextInputChange} // Debugging output    
+                              onChangeHandler={handleTextInputChange}
+                              value={value} // Debugging output  
+                              onClickHandler={handleshowhideclick}
+
                         />
                   </div>
 
@@ -34,7 +38,9 @@ function TextInputForm() {
                   <div>
                         <Button
                               styleType="warning"
-                              text="Show/hide"
+                              text={inputType === "password" ? "Show" : "Hide"}
+                              onClickHandler={handleshowhideclick}
+
                         />
                   </div>
 

@@ -2,10 +2,7 @@
 import React from 'react';
 
 /**
- * TextInput Component
- * Renders a styled input field with an optional label.
  * This component is stateless and purely presentational — it relies on parent
- * components to manage the input's value and change events.
  */
 function TextInput({ 
   type = "text",                  // Input type (text, password, email, etc.)
